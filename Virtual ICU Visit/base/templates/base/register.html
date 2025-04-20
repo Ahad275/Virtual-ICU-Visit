@@ -1,0 +1,93 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Visit Registration{% endblock %}
+
+{% block content %}
+<style>
+  .visit-form-container {
+    max-width: 750px;
+    margin: 60px auto;
+    padding: 40px;
+    background: #f4fefc;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+
+  .visit-form-container h2 {
+    text-align: center;
+    color: #16423C;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+  }
+
+  .visit-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .visit-form form .full-width {
+    grid-column: 1 / 3;
+  }
+
+  .visit-form input,
+  .visit-form textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+  }
+
+  .visit-form input:focus,
+  .visit-form textarea:focus {
+    border-color: #16423C;
+    outline: none;
+  }
+
+  .visit-form button {
+    grid-column: 1 / 3;
+    background: #16423C;
+    color: #C4DAD2;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .visit-form button:hover {
+    background: #133730;
+  }
+
+  @media (max-width: 768px) {
+    .visit-form form {
+      grid-template-columns: 1fr;
+    }
+
+    .visit-form button {
+      grid-column: 1;
+    }
+  }
+</style>
+
+<div class="visit-form-container">
+  <h2>Register for Hospital Visit</h2>
+  <div class="visit-form">
+    <form method="POST">
+      {% csrf_token %}
+      <input type="text" name="patient_name" placeholder="Patient's Full Name" required class="full-width">
+      <input type="text" name="age" placeholder="Patient's Age" required>
+      <input type="text" name="gender" placeholder="Gender" required>
+      <input type="text" name="contact" placeholder="Contact Number" required>
+      <input type="email" name="email" placeholder="Email Address (optional)">
+      <textarea name="address" rows="3" placeholder="Full Address" required class="full-width"></textarea>
+      <textarea name="medical_info" rows="4" placeholder="Brief Medical Concern / Reason for Visit" required class="full-width"></textarea>
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

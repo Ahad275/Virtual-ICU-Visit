@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <!-- <link rel="stylesheet" href="{% static 'main/css/style.css' %}" /> -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #16423C;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #C4DAD2;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            border-bottom: 2px solid #C4DAD2;
+        }
+
+        main {
+            padding: 0rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+        }
+
+        header {
+            background: #16423C;
+            color: #C4DAD2;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: #C4DAD2;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            background: #C4DAD2;
+            color: #16423C;
+        }
+
+        .btn {
+            background: #16423C;
+            color: #fff;
+            padding: 10px 20px;
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/base/home/">Home</a>
+        <!-- <a href="/polls/login/">Login</a> -->
+        <a href="/base/dashboard/">Dashboard</a>
+        <!-- <a href="/polls/admin_portal/">Admin Portal</a> -->
+        <a href="/base/patient_view/">Patient View</a>
+        <a href="/base/register/">Register</a>
+        <a href="/base/contact/">Contact</a>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
+</html>

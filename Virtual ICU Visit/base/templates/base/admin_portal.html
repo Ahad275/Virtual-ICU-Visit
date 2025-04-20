@@ -1,0 +1,94 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Admin Portal{% endblock %}
+
+{% block content %}
+<style>
+  .admin-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .admin-container h2 {
+    font-size: 2.5rem;
+    color: #16423C;
+    margin-bottom: 10px;
+  }
+
+  .admin-container p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+  }
+
+  .admin-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+
+  .admin-card {
+    background-color: #f4fefc;
+    border: 2px solid #cce5e2;
+    border-radius: 15px;
+    width: 250px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .admin-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .admin-card h3 {
+    color: #16423C;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+  }
+
+  .admin-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #16423C;
+    color: #C4DAD2;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .admin-card a:hover {
+    background-color: #0e302a;
+  }
+</style>
+
+<div class="admin-container">
+  <h2>Admin Panel</h2>
+  <p>Welcome Admin. Use the options below to manage hospital operations effectively.</p>
+
+  <div class="admin-actions">
+    <div class="admin-card">
+      <h3>Manage Patients</h3>
+      <a href="/polls/patient_view/">View Patients</a>
+    </div>
+    <div class="admin-card">
+      <h3>Staff Records</h3>
+      <a href="/polls/staff/">View Staff</a>
+    </div>
+    <div class="admin-card">
+      <h3>Appointments</h3>
+      <a href="/polls/appointments/">Manage Appointments</a>
+    </div>
+    <div class="admin-card">
+      <h3>Reports</h3>
+      <a href="/polls/reports/">View Reports</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

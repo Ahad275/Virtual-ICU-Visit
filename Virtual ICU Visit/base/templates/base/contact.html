@@ -1,0 +1,84 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<style>
+  .contact-section {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-section h2 {
+    text-align: center;
+    color: #16423C;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+  }
+
+  .contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-section input,
+  .contact-section textarea {
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+    transition: border 0.3s ease;
+  }
+
+  .contact-section input:focus,
+  .contact-section textarea:focus {
+    outline: none;
+    border-color: #16423C;
+  }
+
+  .contact-section button {
+    background: #16423C;
+    color: #C4DAD2;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .contact-section button:hover {
+    background: #133730;
+  }
+
+  @media (max-width: 768px) {
+    .contact-section {
+      margin: 30px 15px;
+      padding: 25px;
+    }
+
+    .contact-section h2 {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<div class="contact-section">
+  <h2>Contact Us</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+{% endblock %}

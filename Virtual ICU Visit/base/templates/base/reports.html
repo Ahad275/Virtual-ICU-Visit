@@ -1,0 +1,146 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Medical Reports{% endblock %}
+
+{% block content %}
+<style>
+  .reports-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    background-color: #f9fdfc;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 15px;
+  }
+
+  .reports-container h2 {
+    font-size: 2.8rem;
+    color: #16423C;
+    border-bottom: 3px solid #C4DAD2;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+  }
+
+  .reports-container p {
+    font-size: 1.15rem;
+    color: #444;
+    margin-bottom: 25px;
+    line-height: 1.7;
+  }
+
+  .reports-section {
+    margin-bottom: 50px;
+  }
+
+  .reports-section h3 {
+    font-size: 2rem;
+    color: #16423C;
+    margin-bottom: 20px;
+  }
+
+  .reports-section ul {
+    list-style-type: disc;
+    padding-left: 25px;
+  }
+
+  .reports-section ul li {
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 12px;
+  }
+
+  .reports-section a {
+    color: #0b5f5c;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .reports-section a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-info {
+    background-color: #e6f4f3;
+    padding: 25px 30px;
+    border-left: 6px solid #16423C;
+    border-radius: 10px;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+    margin: 8px 0;
+    color: #2e2e2e;
+  }
+
+  .portal-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #16423C;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .portal-button:hover {
+    background-color: #0f2f2b;
+  }
+
+  @media screen and (max-width: 768px) {
+    .reports-container {
+      padding: 20px;
+    }
+
+    .reports-container h2 {
+      font-size: 2.2rem;
+    }
+
+    .reports-section h3 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<div class="reports-container">
+  <h2>Request Your Medical Records</h2>
+  <p>We are committed to ensuring that you have easy and secure access to your medical records. Whether you need them for personal use, a second opinion, or a transfer to another facility, we've streamlined the process for your convenience.</p>
+
+  <div class="reports-section">
+    <h3>How to Request Your Reports</h3>
+    <p>Complete and submit the appropriate form. Requests are typically processed within 7–10 business days. You may choose to receive your records electronically, by mail, or pick them up in person.</p>
+    <ul>
+      <li><a href="{% static 'forms/request_for_records_form.pdf' %}" target="_blank">Download Request for Records Form (PDF)</a></li>
+      <li><a href="{% static 'forms/release_of_medical_records_form.pdf' %}" target="_blank">Download Release Authorization Form (PDF)</a></li>
+    </ul>
+  </div>
+
+  <div class="reports-section">
+    <h3>Associated Fees</h3>
+    <p>Fees are based on the delivery method and number of pages. Charges help us cover processing and material costs:</p>
+    <ul>
+      <li>Electronic records (via CD/USB): ₹540 + GST + courier charges</li>
+      <li>Paper copies: ₹7–₹10 per page + GST + courier charges</li>
+      <li>Hybrid (electronic + paper): calculated as per pages and format</li>
+    </ul>
+  </div>
+
+  <div class="reports-section">
+    <h3>Need Help? Contact Us</h3>
+    <div class="contact-info">
+      <p><strong>Medical Records Department</strong></p>
+      <p><strong>Phone:</strong> +91-98765-43210</p>
+      <p><strong>Email:</strong> <a href="mailto:records@hospitalcare.com">records@hospitalcare.com</a></p>
+      <p><strong>Hours:</strong> Monday–Friday, 9:00 AM to 5:00 PM</p>
+      <p><strong>Address:</strong> 123 Wellness Avenue, Cityname, ZIP 123456</p>
+    </div>
+  </div>
+
+  <div class="reports-section">
+    <h3>Prefer Online Access?</h3>
+    <p>Log in to your patient portal to securely view and download your medical history, lab results, imaging reports, and more.</p>
+    <a href="/polls/patient_portal/" class="portal-button">Go to Patient Portal</a>
+  </div>
+</div>
+{% endblock %}

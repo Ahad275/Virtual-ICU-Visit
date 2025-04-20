@@ -1,0 +1,124 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}ICU Virtual Experience{% endblock %}
+
+{% block content %}
+<style>
+  .hero-video {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    
+  }
+  .hero-video video {
+    position: absolute;
+    top: 50%; left: 50%;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+  .hero-video::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+  }
+  .card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    width: 280px;
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-10px);
+  }
+
+  .cta {
+    background: #16423C;
+    color: #C4DAD2;
+    padding: 50px 20px;
+  }
+  .cta a {
+    background: #C4DAD2;
+    color: #16423C;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+</style>
+
+<!-- HERO VIDEO SECTION -->
+<section class="hero-video">
+  <video autoplay muted loop playsinline>
+    <source src="{% static 'images/homevideo.mp4' %}" type="video/mp4">
+
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-content">
+    <h1>Step into Our ICU Facility</h1>
+    <p>Experience cutting-edge critical care services in a safe, modern, and well-equipped environment.</p>
+  </div>
+</section>
+
+<!-- FEATURE SECTION -->
+<section class="section">
+  <h2 style="color: #16423C;">What We Offer</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>24x7 Monitoring</h3>
+      <p>Our ICU is equipped with real-time monitoring systems to ensure patient safety round the clock.</p>
+    </div>
+    <div class="card">
+      <h3>Expert Staff</h3>
+      <p>Highly trained doctors and nurses specialized in intensive care and emergency treatment.</p>
+    </div>
+    <div class="card">
+      <h3>Advanced Equipment</h3>
+      <p>From ventilators to cardiac monitors, our ICUs have top-tier medical infrastructure.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Want a Closer Look?</h2>
+  <p>Take a virtual tour or reach out for a guided visit of our facilities.</p>
+  <a href="/base/contact/">Book a Virtual Tour</a>
+</section>
+{% endblock %}

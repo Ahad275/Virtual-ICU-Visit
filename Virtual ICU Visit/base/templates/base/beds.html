@@ -1,0 +1,114 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Bed Availability{% endblock %}
+
+{% block content %}
+<style>
+  .bed-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f4faf9;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.08);
+  }
+
+  .bed-container h2 {
+    font-size: 2.5rem;
+    color: #16423C;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #C4DAD2;
+    padding-bottom: 10px;
+  }
+
+  .bed-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .bed-table th,
+  .bed-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .bed-table th {
+    background-color: #16423C;
+    color: white;
+  }
+
+  .bed-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+
+  .available {
+    background-color: #c4f0cd;
+    color: #1e6735;
+  }
+
+  .occupied {
+    background-color: #ffc9c9;
+    color: #b30000;
+  }
+
+  .bed-note {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #555;
+  }
+</style>
+
+<div class="bed-container">
+  <h2>Current Bed Availability</h2>
+  <table class="bed-table">
+    <thead>
+      <tr>
+        <th>Ward</th>
+        <th>Total Beds</th>
+        <th>Available Beds</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>General Ward</td>
+        <td>40</td>
+        <td>8</td>
+        <td><span class="badge available">Available</span></td>
+      </tr>
+      <tr>
+        <td>ICU</td>
+        <td>20</td>
+        <td>2</td>
+        <td><span class="badge available">Limited</span></td>
+      </tr>
+      <tr>
+        <td>Private Room</td>
+        <td>15</td>
+        <td>0</td>
+        <td><span class="badge occupied">Full</span></td>
+      </tr>
+      <tr>
+        <td>Emergency Ward</td>
+        <td>10</td>
+        <td>5</td>
+        <td><span class="badge available">Available</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="bed-note">
+    Note: Availability is updated every 30 minutes. Please contact the hospital administration to confirm bed status before arrival.
+  </p>
+</div>
+{% endblock %}

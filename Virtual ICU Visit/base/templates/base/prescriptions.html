@@ -1,0 +1,95 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}General Prescriptions{% endblock %}
+
+{% block content %}
+<style>
+  .prescription-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f5fffe;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  }
+
+  .prescription-container h2 {
+    font-size: 2.5rem;
+    color: #16423C;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .med-card {
+    background-color: #fff;
+    padding: 20px;
+    border-left: 6px solid #16423C;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  }
+
+  .med-card h4 {
+    color: #16423C;
+    margin-bottom: 10px;
+  }
+
+  .med-card ul {
+    margin-left: 20px;
+    color: #333;
+  }
+
+  .note {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 30px;
+    text-align: center;
+  }
+</style>
+
+<div class="prescription-container">
+  <h2>General Prescriptions & Medications</h2>
+
+  <div class="med-card">
+    <h4>Fever & Cold</h4>
+    <ul>
+      <li>Paracetamol 500mg – 1 tablet every 6 hours if needed</li>
+      <li>Cetrizine 10mg – Once daily at night</li>
+      <li>Plenty of fluids & rest</li>
+    </ul>
+  </div>
+
+  <div class="med-card">
+    <h4>Acidity & Indigestion</h4>
+    <ul>
+      <li>Omeprazole 20mg – Once daily before breakfast</li>
+      <li>Gelusil syrup – 2 tsp after meals (optional)</li>
+      <li>Avoid spicy, oily foods</li>
+    </ul>
+  </div>
+
+  <div class="med-card">
+    <h4>Body Pain / Headache</h4>
+    <ul>
+      <li>Ibuprofen 400mg – 1 tablet after food if needed</li>
+      <li>Muscle relaxant gel for external use</li>
+      <li>Rest and hydration</li>
+    </ul>
+  </div>
+
+  <div class="med-card">
+    <h4>Diarrhea</h4>
+    <ul>
+      <li>ORS solution – After every loose motion</li>
+      <li>Racecadotril 100mg – 1 capsule every 8 hours</li>
+      <li>Light diet, avoid dairy</li>
+    </ul>
+  </div>
+
+  <div class="note">
+    Note: These are general suggestions. Always consult a doctor for a proper diagnosis and prescription based on your health condition.
+  </div>
+</div>
+{% endblock %}

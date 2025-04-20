@@ -1,0 +1,104 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Patient Monitoring{% endblock %}
+
+{% block content %}
+<style>
+  .monitor-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f9fdfc;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .monitor-container h2 {
+    font-size: 2.5rem;
+    color: #16423C;
+    margin-bottom: 20px;
+  }
+
+  .monitor-container p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 30px;
+  }
+
+  .video-box {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    background: #000;
+    border: 4px solid #16423C;
+    border-radius: 10px;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .instructions {
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  .instructions h3 {
+    color: #16423C;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .instructions ul {
+    padding-left: 20px;
+  }
+
+  .instructions li {
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .btn-request {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #16423C;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+  .btn-request:hover {
+    background-color: #0e2b26;
+  }
+</style>
+
+<div class="monitor-container">
+  <h2>Virtual Patient Monitoring</h2>
+  <p>We understand how important it is for families to stay connected. With our virtual monitoring system, you can now watch your loved one in the ICU remotely and securely.</p>
+
+  <!-- Video feed (replace src with real embed if available) -->
+  <div class="video-box">
+    <!-- Placeholder -->
+    Live Feed (Coming Soon)
+    <!-- Example: <iframe src="https://example.com/live-feed" width="100%" height="100%" allowfullscreen></iframe> -->
+  </div>
+
+  <div class="instructions">
+    <h3>How it Works:</h3>
+    <ul>
+      <li>Only family members authorized by the patient can access the live feed.</li>
+      <li>A request must be submitted to the hospital for virtual monitoring access.</li>
+      <li>Upon approval, a secure link will be provided via email or SMS.</li>
+      <li>Access is time-limited and monitored by hospital staff for security.</li>
+    </ul>
+
+    <a href="/monitoring/request-access/" class="btn-request">Request Access</a>
+  </div>
+</div>
+{% endblock %}
